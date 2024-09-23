@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherHDS GFX HANDLER</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <script src="https://kit.fontawesome.com/913ab3dc19.js" crossorigin="anonymous"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script> <!--MAPBOX-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--CHART-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet'/>
+    <script src="https://unpkg.com/maplibre-gl@3.6.0/dist/maplibre-gl.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous">
+    </script>
+    <script 
+        src="//cdn.jsdelivr.net/npm/jquery.marquee@1.6.0/jquery.marquee.min.js"
+        type="text/javascript">
+    </script>
+    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/weather.js" defer></script>
+    <script type="module" src = "js/loops.js" defer></script>
+    <script type="module" src="js/radar.js" defer></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div id="container" class="container">
+            <div class="wallpaper"></div>
+
+            <!-- START OF MAIN STUFF -->
+            
+            <!-- START OF SIDEBAR -->
+            <div class="sidebar">
+                <div class="sidebar-current">
+                    <div class="sidebar-current-wrapper">
+
+
+                        <div class="sidebar-current-upcoming" id="sidebar-upcoming-cities">
+                        </div>
+
+                    <div class="sidebar-current-progress-bar" id="sidebar-progress-bar">
+
+                    </div>
+
+                    </div>
+                    <div class="sidebar-current-weather" id="current-box">
+                        <div class="sidebar-current-weather-condition">
+                            <img src="./images/design/fill/final/clear-day.svg" alt="" id="current-icon" class="weather-icon">
+                        </div>
+                        
+                        <div class="sidebar-current-weather-info">
+                            <h3 id="current-condition" class="sidebar-current-condition">Sunny</h3>
+                            <h4 id="current-temp" class="sidebar-current-temp">Temp</h4>
+                            <h4 id="current-wind" class="sidebar-current-wind">Wind</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-main">
+                    <div class="sidebar-main-dayparts" id="sidebar-main-dayparts">
+                        <div class="sidebar-main-dayparts-container">
+                            <div id="sidebar-daypart-box-1" class="sidebar-main-dayparts-box">
+                                <div class="dayparts-icon">
+                                    <img id="sidebar-daypart-icon-1" src="images/design/fill/final/clear-night.svg" alt="" class="weather-icon">
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Temp</h4>
+                                    <h3 id="sidebar-daypart-temp-1">23C</h3>
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Precip %</h4>
+                                    <h3 id="sidebar-daypart-precipc-1">28%</h3>
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Wind</h4>
+                                    <h4 id="sidebar-daypart-wind-1">NNW, 68MPH</h4>
+                                </div>
+                            </div>
+                            <div id="sidebar-daypart-box-2" class="sidebar-main-dayparts-box">
+                                <div class="dayparts-icon">
+                                    <img id="sidebar-daypart-icon-2" src="images/design/fill/final/clear-night.svg" alt="" class="weather-icon">
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Temp</h4>
+                                    <h3 id="sidebar-daypart-temp-2">23C</h3>
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Precip %</h4>
+                                    <h3 id="sidebar-daypart-precipc-2">28%</h3>
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Wind</h4>
+                                    <h4 id="sidebar-daypart-wind-2">NNW, 68MPH</h4>
+                                </div>
+                            </div>
+                            <div id="sidebar-daypart-box-3" class="sidebar-main-dayparts-box">
+                                <div class="dayparts-icon">
+                                    <img id="sidebar-daypart-icon-3" src="images/design/fill/final/clear-night.svg" alt="" class="weather-icon">
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Temp</h4>
+                                    <h3 id="sidebar-daypart-temp-3">23C</h3>
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Precip %</h4>
+                                    <h3 id="sidebar-daypart-precipc-3">28%</h3>
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Wind</h4>
+                                    <h4 id="sidebar-daypart-wind-3">NNW, 68MPH</h4>
+                                </div>
+                            </div>
+                            <div id="sidebar-daypart-box-4" class="sidebar-main-dayparts-box">
+                                <div class="dayparts-icon">
+                                    <img id="sidebar-daypart-icon-4" src="images/design/fill/final/clear-night.svg" alt="" class="weather-icon">
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Temp</h4>
+                                    <h3 id="sidebar-daypart-temp-4">23C</h3>
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Precip %</h4>
+                                    <h3 id="sidebar-daypart-precipc-4">28%</h3>
+                                </div>
+                                
+                                <div class="dayparts-numerical">
+                                    <h4 class="dayparts-numerical-text">Wind</h4>
+                                    <h4 id="sidebar-daypart-wind-4">NNW, 68MPH</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sidebar-main-dayparts-expanded-container">
+                            <div class="sidebar-main-dayparts-expanded" id="sidebar-daypart-expanded">
+                                <div class="sidebar-main-dayparts-expanded-text">
+                                    <h3 id="sidebar-daypart-part" style="text-align: center;">Tuesday</h3>
+                                    <h5 id="sidebar-daypart-narrative">your api dont work</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF SIDEBAR -->
+
+            <div class="loading-container">
+                <h1>Loading: </h1>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+            </div>
+
+            <div class="title-bar">
+                <img src="images/meteo_white.png" alt="" id="channel-logo">
+                <div class="main-title-bar-locations-progress">
+                    <div class="main-title-bar-upcoming">
+                        <div class="main-title-bar-upcoming-icon">
+                            <i class="fa-solid fa-map-location-dot main-title-bar-upcoming-text-animated-locations"></i>
+                        </div>
+                        <div class="main-title-bar-upcoming-text">
+                            <h3 class="main-title-bar-upcoming-text-animated-locations bold no-shadow" id="main-title-bar-locations">Edmond</h3>
+                        </div>
+                    </div>
+                    <div class="main-title-bar-upcoming">
+                        <div class="main-title-bar-upcoming-icon">
+                            <i class="fa-solid fa-chalkboard "></i>
+                        </div>
+                        <div class="main-title-bar-upcoming-text">
+                            <h3 class="main-title-bar-upcoming-text-animated-slides bold no-shadow" id="main-title-bar-slides">Alerts</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- START OF MAIN SLIDES --> 
+            <div class="main">
+                <div id="slide-container" class="slideshow">
+                            <div class="main-ident" id="main-identification">
+                                <div class="main-ident-channellogo-container">
+                                    <img class="main-ident-logos" id="main-ident-channel" src="images/meteo_white.png">
+                                </div>
+                                
+                                <div class="main-ident-operatorlogo-container">
+                                    <img class="main-ident-logos" id="main-ident-operator" src="images/kodi2023.png">
+                                </div>
+
+                                <div class="main-ident-maintextarea-container">
+                                    <h1 class="main-ident-text1" id="main-ident-loc-intro">Some header</h1>
+                                    <h2 class="main-ident-text2" id="main-ident-blurb">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit </h2>
+                                </div>
+
+                                <div class="main-ident-hdslogo-container">
+                                    <img class="main-ident-logos" src="images/hds2_2024logo.png">
+                                </div>
+
+                                <div class="">
+                                    <h2 id="main-ident-syslocation" class="main-ident-location">my boyfriend's closet</h2>
+                                </div>
+   
+                            </div>
+
+                            <div class="main-slide" id="main-alerts">
+                                <div class="main-slide-alerts-container" id="main-alerts-container">
+                                </div>
+                            </div>
+                            
+
+                            <div class="main-slide" id="main-current">
+                                <div class="main-current-container">
+                                    <div class="main-current-topbox">
+                                        <div class="main-current-topbox-icon">
+                                            <img src="./images/production/fill/all/clear-day.svg" alt="" id="main-current-icon" class="weather-icon">
+                                        </div>
+                                        <div class="main-current-topbox-conditons">
+                                            <h2 id="main-current-condition" class="bold">Mostly Cloudy</h2>
+                                            <div class="main-current-topbox-temp">
+                                                <div class="main-current-temp">
+                                                    <h4 class="temp-header">TEMP</h4>
+                                                    <h2 id="main-current-temp" class="temp-text">16°C</h2>
+                                                </div>
+
+                                                <div class="main-current-topbox-temp-feelslike">
+                                                    <h4  class="feelslike-header">FEELS LIKE</h4>
+                                                    <h2 id="main-current-feelslike" class="feelslike-text">200C</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="main-current-bottombox">
+                                        <div class="bottombox-container-column">
+                                            <div class="bottombox-container-row">
+                                                <h3 class="bottombox-container-row-text">Wind: </h3>
+                                                <h3 class="bottombox-container-row-text" id="main-current-wind">444MPH</h3>
+                                            </div>
+                                            <div class="bottombox-container-row">
+                                                <h3 class="bottombox-container-row-text">Humidity: </h3>
+                                                <h3 class="bottombox-container-row-text" id="main-current-humidity">60%</h3>
+                                            </div>
+                                            <div class="bottombox-container-row">
+                                                <h3 class="bottombox-container-row-text">Dewpoint: </h3>
+                                                <h3 class="bottombox-container-row-text" id="main-current-dewpoint">16°C</h3>
+                                            </div>
+                                        </div>
+                                        <div class="bottombox-container-column">
+                                            <div class="bottombox-container-row">
+                                                <h3 class="bottombox-container-row-text">Pressure: </h3>
+                                                <h3 class="bottombox-container-row-text" id="main-current-pressure">1000.46 mb</h3>
+                                            </div>
+                                            <div class="bottombox-container-row">
+                                                <h3 class="bottombox-container-row-text">Visibility: </h3>
+                                                <h3 class="bottombox-container-row-text" id="main-current-visibility">100Miles</h3>
+                                            </div>
+                                            <div class="bottombox-container-row">
+                                                <h3 class="bottombox-container-row-text">1 hr Accum :</h3>
+                                                <h3 class="bottombox-container-row-text" id="main-current-precip">0.69 mm</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="main-slide" id="main-hourly">
+                                
+                            </div>
+                            
+                            <div class="main-slide" id="main-forecast">
+                                <div class="forecastdays-container" id="main-forecast-slide1">
+                                    <div class="forecastdays-wrapper">
+                                        <div class="forecast-day-container-wrapper">
+
+                                        
+                                            <div class="forecast-day-container">
+                                                <div class="forecast-day-part">
+                                                    <h2 id="main-forecast-part-0" class="bold">MON</h2>
+                                                </div>
+                                                <div class="forecast-day-icon">
+                                                    <img id="main-forecast-icon-0" src="images/design/fill/final/clear-day.svg" alt="" class="weather-icon forecast-icon">
+                                                </div>
+                                                <div class="forecast-day-condition">
+                                                    <div class="forecast-day-condition-wind">
+                                                        <h3 id="main-forecast-wind-0" class="bold">W 3</h3>
+                                                    </div>
+                                                    <div class="forecast-day-condition-temp">
+                                                        <h2 id="main-forecast-temp-0" class="bold">34 F</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="forecast-day-container">
+                                                <div class="forecast-day-part">
+                                                    <h2 id="main-forecast-part-1" class="bold">MON</h2>
+                                                </div>
+                                                <div class="forecast-day-icon">
+                                                    <img id="main-forecast-icon-1" src="images/design/fill/final/clear-day.svg" alt="" class="weather-icon forecast-icon">
+                                                </div>
+                                                <div class="forecast-day-condition">
+                                                    <div class="forecast-day-condition-wind">
+                                                        <h3 id="main-forecast-wind-1" class="bold">W 3</h3>
+                                                    </div>
+                                                    <div class="forecast-day-condition-temp">
+                                                        <h2 id="main-forecast-temp-1" class="bold">34 F</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="forecast-day-container">
+                                                <div class="forecast-day-part">
+                                                    <h2 id="main-forecast-part-2" class="bold">MON</h2>
+                                                </div>
+                                                <div class="forecast-day-icon">
+                                                    <img id="main-forecast-icon-2" src="images/design/fill/final/clear-day.svg" alt="" class="weather-icon forecast-icon">
+                                                </div>
+                                                <div class="forecast-day-condition">
+                                                    <div class="forecast-day-condition-wind">
+                                                        <h3 id="main-forecast-wind-2" class="bold">W 3</h3>
+                                                    </div>
+                                                    <div class="forecast-day-condition-temp">
+                                                        <h2 id="main-forecast-temp-2" class="bold">34 F</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="forecast-day-container">
+                                                <div class="forecast-day-part">
+                                                    <h2 id="main-forecast-part-3" class="bold">MON</h2>
+                                                </div>
+                                                <div class="forecast-day-icon">
+                                                    <img id="main-forecast-icon-3" src="images/design/fill/final/clear-day.svg" alt="" class="weather-icon forecast-icon">
+                                                </div>
+                                                <div class="forecast-day-condition">
+                                                    <div class="forecast-day-condition-wind">
+                                                        <h3 id="main-forecast-wind-3" class="bold">W 3</h3>
+                                                    </div>
+                                                    <div class="forecast-day-condition-temp">
+                                                        <h2 id="main-forecast-temp-3" class="bold">34 F</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="forecast-day-container">
+                                                <div class="forecast-day-part">
+                                                    <h2 id="main-forecast-part-4" class="bold">MON</h2>
+                                                </div>
+                                                <div class="forecast-day-icon">
+                                                    <img id="main-forecast-icon-4" src="images/design/fill/final/clear-day.svg" alt="" class="weather-icon forecast-icon">
+                                                </div>
+                                                <div class="forecast-day-condition">
+                                                    <div class="forecast-day-condition-wind">
+                                                        <h3 id="main-forecast-wind-4" class="bold">W 3</h3>
+                                                    </div>
+                                                    <div class="forecast-day-condition-temp">
+                                                        <h2 id="main-forecast-temp-4" class="bold">34 F</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="forecast-day-container">
+                                                <div class="forecast-day-part">
+                                                    <h2 id="main-forecast-part-5" class="bold">MON</h2>
+                                                </div>
+                                                <div class="forecast-day-icon">
+                                                    <img id="main-forecast-icon-5" src="images/design/fill/final/clear-day.svg" alt="" class="weather-icon forecast-icon">
+                                                </div>
+                                                <div class="forecast-day-condition">
+                                                    <div class="forecast-day-condition-wind">
+                                                        <h3 id="main-forecast-wind-5" class="bold">W 3</h3>
+                                                    </div>
+                                                    <div class="forecast-day-condition-temp">
+                                                        <h2 id="main-forecast-temp-5" class="bold">34 F</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="forecast-day-container">
+                                                <div class="forecast-day-part">
+                                                    <h2 id="main-forecast-part-6" class="bold">MON</h2>
+                                                </div>
+                                                <div class="forecast-day-icon">
+                                                    <img id="main-forecast-icon-6" src="images/design/fill/final/clear-day.svg" alt="" class="weather-icon forecast-icon">
+                                                </div>
+                                                <div class="forecast-day-condition">
+                                                    <div class="forecast-day-condition-wind">
+                                                        <h3 id="main-forecast-wind-6" class="bold">W 3</h3>
+                                                    </div>
+                                                    <div class="forecast-day-condition-temp">
+                                                        <h2 id="main-forecast-temp-6" class="bold">34 F</h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="forecastdays-container-low">
+                                            <div class="forecast-low-box">
+                                                <h2 id="main-forecast-low-0" class="bold">4 F</h2>
+                                            </div>
+                                            <div class="forecast-low-box">
+                                                <h2 id="main-forecast-low-1" class="bold">4 F</h2>
+                                            </div>
+                                            <div class="forecast-low-box">
+                                                <h2 id="main-forecast-low-2" class="bold">4 F</h2>
+                                            </div>
+                                            <div class="forecast-low-box">
+                                                <h2 id="main-forecast-low-3" class="bold">4 F</h2>
+                                            </div>
+                                            <div class="forecast-low-box">
+                                                <h2 id="main-forecast-low-4" class="bold">4 F</h2>
+                                            </div>
+                                            <div class="forecast-low-box">
+                                                <h2 id="main-forecast-low-5" class="bold">4 F</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                                
+
+                                
+                                <div class="main-forecast-day-forecast" id="main-forecast-slide2">
+                                    <div class="main-forecast-day-forecast-info">
+                                        <h1 id="main-forecast-day-forecast-1" class="bold" style="text-align: center;">Tonight</h1>
+                                        <div class="main-forecast-day-forecast-info-icon">
+                                            <img src="images/design/fill/final/clear-night.svg" alt="" class="weather-icon" id="main-forecast-day-icon-1">
+                                        </div>
+                                        <div class="main-forecast-day-forecast-info-text">
+                                            <h1 id="main-forecast-day-temp-1">76F</h1>
+                                            <h2 style="text-align: center;" id="main-forecast-day-precipc-1" class="bold"></h2>
+                                        </div>
+                                    </div>
+                                    <div class="main-forecast-day-forecast-text">
+                                        <h1 id="main-forecast-day-text-1"></h1>
+                                    </div>
+                                </div>
+
+                                <div class="main-forecast-day-forecast" id="main-forecast-slide3">
+                                    <div class="main-forecast-day-forecast-info">
+                                        <h1 id="main-forecast-day-forecast-2" class="bold" style="text-align: center;">Tonight</h1>
+                                        <div class="main-forecast-day-forecast-info-icon">
+                                            <img src="images/design/fill/animation-ready/clear-night.svg" alt="" class="weather-icon" id="main-forecast-day-icon-2">
+                                        </div>
+                                        <div class="main-forecast-day-forecast-info-text">
+                                            <h1 id="main-forecast-day-temp-2">76F</h1>
+                                            <h2 style="text-align: center;" id="main-forecast-day-precipc-2" class="bold"></h2>
+                                        </div>
+                                    </div>
+                                    <div class="main-forecast-day-forecast-text">
+                                        <h1 id="main-forecast-day-text-2"></h1>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="main-slide" id="main-airquality">
+                                <div class="main-airquality-container">
+                                    <div class="main-airquality-bar-container">
+                                        <h3 class="main-airquality-title bold no-shadow word-break" id="main-airquality-bar-day">DAY</h3>
+                                        <div class="main-airquality-box">
+                                            <div class="main-airquality-bar">
+                                                <div class="main-airquality-bar-counter" id="main-airquality-bar-countBox">
+                                                    <h4 class="bold no-shadow" id="main-airquality-bar-counter">1</h4>
+                                                    <i class="fa-solid fa-angle-right main-airquality-bar-arrow" id="main-airquality-bar-arrow"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main-airquality-primary-container">
+                                        <h3 class="main-airquality-title bold no-shadow word-break">PRIMARY POLLUTANT</h3>
+                                        <div class="main-airquality-box">
+                                            <div class="main-airquality-primary">
+                                                <h2 class="main-airquality-primary-name no-shadow bold" id="main-airquality-primary-name">YEa YEa</h2>
+                                                <h2 class="main-airquality-primary-amount no-shadow bold" id="main-airquality-primary-amount">95.5</h2>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="main-airquality-all-container">
+                                        <h3 class="main-airquality-title bold no-shadow word-break">ALL POLUTANTS</h3>
+
+                                        <div class="main-airquality-box">
+                                            <div class="main-airquality-all">
+                                                <div class="main-airquality-all-title-row">
+                                                    <h3 class="bold no-shadow">POLLUTANT</h3>
+                                                    <h3 class="bold no-shadow">AMOUNT</h3>
+                                                </div>
+                                                <div class="main-airquality-all-row">
+                                                    <h4 class="bold no-shadow">O3 (Ozone)</h4>
+                                                    <h4 class="main-airquality-all-sub bold no-shadow" id="main-airquality-all-pol-o3">56</h4>
+                                                </div>
+
+                                                <div class="main-airquality-all-row">
+                                                    <h4 class="bold no-shadow">NO2 (Nitrogen Dioxide)</h4>
+                                                    <h4 class="main-airquality-all-sub bold no-shadow" id="main-airquality-all-pol-no2">45</h4>
+                                                </div>
+
+                                                <div class="main-airquality-all-row">
+                                                    <h4 class="bold no-shadow">PM 2.5</h4>
+                                                    <h4 class="main-airquality-all-sub bold no-shadow" id="main-airquality-all-pol-pm2.5">34</h4>
+                                                </div>
+
+                                                <div class="main-airquality-all-row">
+                                                    <h4 class="bold no-shadow">PM 10</h4>
+                                                    <h4 class="main-airquality-all-sub bold no-shadow" id="main-airquality-all-pol-pm10">23</h4>
+                                                </div>
+
+                                                <div class="main-airquality-all-row">
+                                                    <h4 class="bold no-shadow">SO2 (Sulphur Dioxide)</h4>
+                                                    <h4 class="main-airquality-all-sub bold no-shadow" id="main-airquality-all-pol-so2">12</h4>
+                                                </div>
+
+                                                <div class="main-airquality-all-row">
+                                                    <h4 class="bold no-shadow">CO (Carbon Monoxide)</h4>
+                                                    <h4 class="main-airquality-all-sub bold no-shadow" id="main-airquality-all-pol-co">1</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main-airquality-messages-container">
+                                        <h2 id="main-airquality-messages-group" class="bold no-shadow">General Group Message</h2>
+                                        <h3 id="main-airquality-messages-message" class="no-shadow">Air quality is considered satisfactory, and air pollution poses little or no risk.</h3>
+                                        <h5 class="bold no-shadow disclaimer italic" style="text-align: center; margin-top:2%;">Disclaimer: Created from Copernicus Atmosphere Monitoring Service Information 2024 Disclaimer: Neither the European Commission nor ECMWF is responsible for any use that may be made of the information it contains</h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="main-slide" id="main-radar">
+                                <div class="radar-legend">
+                                    <h4 class="radar-legend-titles" id="main-radar-current-time">Time:</h4>
+                                    <h3 class="radar-legend-titles">Precipitation</h3>
+                                    <div class="main-radar-color-bar">
+                                        <div class="main-radar-color-bar-text-container">
+                                            <h3 style="position: absolute; left:40%; width:10%; background-color:transparent;">Light</h3>
+                                            <h3 style="position: absolute; right:0%; width:10%; background-color:transparent;">Heavy</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="main-radar" id='map'></div>
+                            </div> 
+                </div>
+            </div>
+            <!-- END OF MAIN SLIDES -->
+
+            <!-- START OF BOTTOM -->
+            <div class="bottom">
+                <div class="bottom-current-container">
+
+                    <div class="bottom-current-condtions" id="bottom-current-container">
+                        <div class="bottom-current-conditions-col">
+                            <div class="bottom-current-loc-container">
+                                <h3 id="bottom-current-loc-label" class="no-shadow">whatifthecitynamewasreallylong</h3>
+                            </div>
+
+                            <img src="./images/design/fill/final/clear-day.svg" class="bottom-current-icon" alt="" id="bottom-current-icon">
+
+                            <div class="bottom-current-conditions-col-box">
+                                <h4 class="bottom-current-temp-header">TEMP</h4>
+                                <h2 id="bottom-current-temp">53F</h2>
+                            </div>
+                        </div>
+
+                        <div class="bottom-current-conditions-container">
+                            <div class="bottom-current-conditions-box">
+                                <h5 class="bottom-current-conditions-header">WIND</h5>
+                                <h3 id="bottom-current-wind" class="bottom-current-conditions">Wind</h3>
+                            </div>
+
+                            <div class="bottom-current-conditions-box">
+                                <h5 class="bottom-current-conditions-header">DEWPOINT</h5>
+                                <h3 id="bottom-current-dewpoint" class="bottom-current-conditions">Dewpoint</h3>
+                            </div>
+                        </div>
+                         
+                        <div class="bottom-current-conditions-container">
+                            <div class="bottom-current-conditions-box">
+                                <h5 class="bottom-current-conditions-header">HUMIDITY</h5>
+                                <h3 id="bottom-current-humidity" class="bottom-current-conditions">Humidity</h3>
+                            </div>
+
+                            <div class="bottom-current-conditions-box">
+                                <h5 class="bottom-current-conditions-header">VISIBILITY</h5>
+                                <h3 id="bottom-current-visibility" class="bottom-current-conditions">Visibility</h3>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="bottom-projected-container" id="bottom-proj-chart-container">
+                    <div class="bottom-forecast-chart" id="bottom-proj-chart-1">
+                        <canvas id="bottom-proj-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-scroll">
+                <h3 class="bottom-scroll-element" id="scroll"></h3>
+            </div>
+
+            <div class="time">
+                <div class="datetime-holder">
+                    <h2 id="datetime">HELLO IT ME .PLAMB (EE 1 / 10)</h2>
+                    <h4 id="datetime-day">Sept 11th 2001</h4>
+                </div>
+            </div>
+
+            <div class="bottom-branding">
+                <div class="seasonal-msg">
+                    <h3 id="seasonmsg">Happy Crawford Year 2024!</h1>
+                </div>
+                <div id="operatorLogo" class="operator-logo">
+                    <img src="images/kodi2023.png">
+                </div>
+            </div>
+
+            <div class="bottom-extra-padding">
+                <div class="bottom-extra-padding-square"></div>
+                <div class="bottom-extra-padding-triangle"></div>
+            </div>
+
+            <!-- END OF BOTTOM -->
+        </div>
+    </div>
+    <div style="position: fixed; top: 100%; font-size: large; font-family: 'Comic Sans MS'; color: white;">nothing down here go away</div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+peyton and sspwxr ideas!!!!!!!!!!!!!
+utility shit we should add
+
+KEY: * MEANS DONE
+SHORT TERM 
+-add seperate box to air quality slide to show general and sensitive group messages (Make other boxes shorter)
+- 
+
+TRAVEL
+-driving difficulty (current and daypart)
+-Travel City Conditions
+-Travel City Radar (Basically a national radar)
+
+HEALTH
+-mosquito activity index
+-heating and cooling
+-uv index
+-pollen
+-frizz
+
+RECREATIONAL
+-leisure index
+-watering needs
+-gardening
+-golf index
+-ski index (daypart)
+
+PROGRAMMING IDEAS
+-Overide for monthly locked slides (an option that the user will pick)
+-Be able to pick which slides to use and the duration per slide (radar slide time will be locked based on the amount of loops you do)
+-User can choose what main slide cities to use OR they can use the api.weather.com "NEAR" API to see nearby cities. The idea in mind is that there will be a min and max radius for the observation points. (The cities that you get on the api) Also, in the options, there will be an api call to the api so that we can check how much cities we get back and IF the user wants to add more.
+-!IMPORTANT! Make it so every piece of data is in one object instead of a bunch of variables (easier import / export and better readibility)
+
+

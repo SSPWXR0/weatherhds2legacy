@@ -3,8 +3,7 @@
     "wxbad": [
       "/images/bg_images/bg_autumn/wx_bad/bg_fall_wxbad_1.jpg",
       "/images/bg_images/bg_autumn/wx_bad/bg_fall_wxbad_2.jpg",
-      "/images/bg_images/bg_autumn/wx_bad/bg_fall_wxbad_3.jpg",
-      "/images/bg_images/bg_autumn/wx_bad/bg_fall_wxbad_4.jpg"
+      "/images/bg_images/bg_autumn/wx_bad/bg_fall_wxbad_3.jpg"
     ],
     "wxgood": [
       "/images/bg_images/bg_autumn/wx_good/bg_fall_wxgood_1.jpg",
@@ -35,7 +34,6 @@
       "/images/bg_images/bg_summer/wxbad/bg_summer_wxbad_1.jpg",
       "/images/bg_images/bg_summer/wxbad/bg_summer_wxbad_10.jpg",
       "/images/bg_images/bg_summer/wxbad/bg_summer_wxbad_11.jpg",
-      "/images/bg_images/bg_summer/wxbad/bg_summer_wxbad_12.jpg",
       "/images/bg_images/bg_summer/wxbad/bg_summer_wxbad_2.jpg",
       "/images/bg_images/bg_summer/wxbad/bg_summer_wxbad_3.jpg",
       "/images/bg_images/bg_summer/wxbad/bg_summer_wxbad_4.jpg",
@@ -56,10 +54,9 @@
       "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_16.jpg",
       "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_17.jpg",
       "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_18.jpg",
-      "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_19.JPG",
+      "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_19.jpg",
       "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_2.jpg",
       "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_20.png",
-      "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_21.jpg",
       "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_3.jpg",
       "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_4.jpg",
       "/images/bg_images/bg_summer/wxgood/bg_summer_wxgood_5.jpg",
@@ -82,7 +79,6 @@
       "/images/bg_images/bg_winter/wxgood/bg_winter_wxgood_11.jpg",
       "/images/bg_images/bg_winter/wxgood/bg_winter_wxgood_12.jpg",
       "/images/bg_images/bg_winter/wxgood/bg_winter_wxgood_13.jpg",
-      "/images/bg_images/bg_winter/wxgood/bg_winter_wxgood_14.jpg",
       "/images/bg_images/bg_winter/wxgood/bg_winter_wxgood_2.jpg",
       "/images/bg_images/bg_winter/wxgood/bg_winter_wxgood_3.jpg",
       "/images/bg_images/bg_winter/wxgood/bg_winter_wxgood_4.jpg",

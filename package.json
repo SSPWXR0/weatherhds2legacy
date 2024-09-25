@@ -4,15 +4,12 @@
   "description": "<img src=\"https://github.com/PeytonWDYM/wscan/blob/main/public/images/weather%20html%20display%20system2.png\"> <h1>WeatherHDS 2 (Weather HTML Display System 2)</h1> <p>The replacement to the original WeatherHDS. Features a reworked codebase, built-in-graphics, and a new radar system!</p> <p>But it essentially does the same thing: \"displays weather information from an API on an HTML page\"</p> <h1>Configuration</h1> <p>*Node.js is required!</p> <h1>to be continued when the actual program is finished</h1>",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "PeytonWX, SSPWXR",
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "express": "^4.18.2",
-    "fs": "^0.0.1-security",
-    "nodemon": "^3.0.1"
-  },
-  "devDependencies": {}
+    "express": "^4.18.2"
+  }
 }

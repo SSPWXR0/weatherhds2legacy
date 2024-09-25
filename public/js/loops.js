@@ -224,7 +224,7 @@ function bottomBarLoop() {
             $(`#${weatherInfo.bottom.current.humidity}`).html(`${bottomCurrentHumidity[currentNatCityIndex]}`)
             $(`#${weatherInfo.bottom.current.visibility}`).html(`${bottomCurrentVisibility[currentNatCityIndex]}`)
             $(`#${weatherInfo.bottom.current.wind}`).html(`${bottomCurrentWind[currentNatCityIndex]}`)
-            $(`#${weatherInfo.bottom.current.icon}`).attr("src", `images/design/fill/final/${weatherIcons[bottomCurrentIcon[currentNatCityIndex]][bottomCurrentDN[currentNatCityIndex]]}`)
+            $(`#${weatherInfo.bottom.current.icon}`).attr("src", `graphics/${weatherIcons[bottomCurrentIcon[currentNatCityIndex]][bottomCurrentDN[currentNatCityIndex]]}`)
 
             weatherChart.data.datasets[0].data = bottomCurrentGraphData[currentNatCityIndex]
 
@@ -396,14 +396,14 @@ function sideBarLoop() {
         let dayparts = 4
         document.getElementById(weatherInfo.sidebar.current.condition).innerHTML = extraCitiesCurrentCondition[currentExtraCityIndex]
         document.getElementById(weatherInfo.sidebar.current.temp).innerHTML = extraCitiesCurrentTemp[currentExtraCityIndex]
-        document.getElementById(weatherInfo.sidebar.current.icon).src = `images/design/fill/final/${weatherIcons[extraCitiesCurrentIcon[currentExtraCityIndex]][extraCitiesCurrentDN[currentExtraCityIndex]]}`;
+        document.getElementById(weatherInfo.sidebar.current.icon).src = `graphics/${weatherIcons[extraCitiesCurrentIcon[currentExtraCityIndex]][extraCitiesCurrentDN[currentExtraCityIndex]]}`;
         document.getElementById(weatherInfo.sidebar.current.wind).innerHTML = extraCitiesCurrentWind[currentExtraCityIndex]
 
         for (let i = 1 ; i < dayparts + 1; i++) {
             document.getElementById(weatherInfo.sidebar.daypart.precipC + i).innerHTML = (extraCitiesDaypartPrecipC[currentExtraCityIndex][i - 1]);
             document.getElementById(weatherInfo.sidebar.daypart.temp + i).innerHTML = (extraCitiesDaypartTemp[currentExtraCityIndex][i - 1]);
             document.getElementById(weatherInfo.sidebar.daypart.wind + i).innerHTML = (extraCitiesDaypartWind[currentExtraCityIndex][i - 1]);
-            document.getElementById(weatherInfo.sidebar.daypart.icon + i).src = `images/design/fill/final/${weatherIcons[extraCitiesDaypartIcon[currentExtraCityIndex][i - 1]][extraCitiesDaypartDN[currentExtraCityIndex][i - 1]]}`;
+            document.getElementById(weatherInfo.sidebar.daypart.icon + i).src = `graphics/${weatherIcons[extraCitiesDaypartIcon[currentExtraCityIndex][i - 1]][extraCitiesDaypartDN[currentExtraCityIndex][i - 1]]}`;
         }
     }
 
@@ -759,7 +759,7 @@ function mainLoop() {
         $(`#${mainVars.ident.mainIdentBlurb}`).html(userConfig.ident.identBlurb)
         
         // Current Weather
-        document.getElementById(weatherInfo.main.currentConditions.icon).src = `images/design/fill/final/${weatherIcons[citiesCurrentIcon[currentCityIndex]][citiesCurrentDOrN[currentCityIndex]]}`;
+        document.getElementById(weatherInfo.main.currentConditions.icon).src = `graphics/${weatherIcons[citiesCurrentIcon[currentCityIndex]][citiesCurrentDOrN[currentCityIndex]]}`;
         document.getElementById(weatherInfo.main.currentConditions.temp).innerHTML = citiesCurrentTemp[currentCityIndex]
         document.getElementById(weatherInfo.main.currentConditions.feelslike).innerHTML = citiesCurrentFeelsLike[currentCityIndex]
         document.getElementById(weatherInfo.main.currentConditions.condition).innerHTML = citiesCurrentConditionLong[currentCityIndex]
@@ -779,7 +779,7 @@ function mainLoop() {
         for (let i = 0; i < citiesForecastDay[currentCityIndex].length; i++) {
             $(`#${weatherInfo.main.forecast.day}${i}`).html(citiesForecastDay[currentCityIndex][i])
             $(`#${weatherInfo.main.forecast.temp}${i}`).html(citiesForecastTemp[currentCityIndex][i])
-            $(`#${weatherInfo.main.forecast.icon}${i}`).attr("src", `images/design/fill/final/${weatherIcons[citiesForecastIcon[currentCityIndex][i]][citiesForecastND[currentCityIndex][i]]}`)
+            $(`#${weatherInfo.main.forecast.icon}${i}`).attr("src", `graphics/${weatherIcons[citiesForecastIcon[currentCityIndex][i]][citiesForecastND[currentCityIndex][i]]}`)
             $(`#${weatherInfo.main.forecast.wind}${i}`).html(citiesForecastWind[currentCityIndex][i])
 
             if (i < 6) {
@@ -792,7 +792,7 @@ function mainLoop() {
             $(`#${weatherInfo.main.forecastDaypart.text}${i + 1}`).html(citiesForecastDaypartNarrative[currentCityIndex][i])
             $(`#${weatherInfo.main.forecastDaypart.precipC}${i + 1}`).html(citiesForecastDaypartPrecipChance[currentCityIndex][i])
             $(`#${weatherInfo.main.forecastDaypart.temp}${i + 1}`).html(citiesForecastDaypartTemp[currentCityIndex][i])
-            $(`#${weatherInfo.main.forecastDaypart.icon}${i + 1}`).attr("src", `images/design/fill/final/${weatherIcons[citiesForecastDaypartIcon[currentCityIndex][i]][citiesForecastDaypartND[currentCityIndex][i]]}`)
+            $(`#${weatherInfo.main.forecastDaypart.icon}${i + 1}`).attr("src", `graphics/${weatherIcons[citiesForecastDaypartIcon[currentCityIndex][i]][citiesForecastDaypartND[currentCityIndex][i]]}`)
 
         
         }

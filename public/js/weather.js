@@ -1,5 +1,3 @@
-const lunarAPI = "https://www.icalendar37.net/lunar/api/"
-const public_mapapi = ""
 const twcApiKey = ""
 let autoPicked = true
 

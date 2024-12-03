@@ -2,12 +2,6 @@
 
 <p id="description">This is the source of the discontinued WeatherHDS 2 which was pending a full rewrite of the entire project. It sources weather data from weather.com. Please keep in mind that there will be very limited or no support with this software at all! Modify it all to your liking!</p>
 
-<h2>Live Demo</h2>
-
-[https://live.mistweather.com/player?channel=sspwxr01](https://live.mistweather.com/player?channel=sspwxr01)
-
-  
-  
 <h2>Features</h2>
 
 *   Radar

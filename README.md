@@ -2,6 +2,8 @@
 
 <p id="description">This is the source of the discontinued WeatherHDS 2 which was pending a full rewrite of the entire project. It sources weather data from weather.com. Please keep in mind that there will be very limited or no support with this software at all! Modify it all to your liking!</p>
 
+<h3>There is a problem with the lower display line where the location names do not match up with the actual weather data!</h3>
+
 <h2>Live Demo</h2>
 
 [https://live.mistweather.com/player?channel=sspwxr01](https://live.mistweather.com/player?channel=sspwxr01)

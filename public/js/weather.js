@@ -11,11 +11,11 @@ const sidebarUpcomingCities = document.getElementById("sidebar-upcoming-cities")
 // START OF MAIN
 
 export let userConfig = {
-    opLocation: "Edmond Ok",
-    unit: "e",
+    opLocation: "Saskatoon, SK",
+    unit: "m",
 
     ident: {
-       identGreeting: "Wlecom to meto cjnnale programe la classe de la classe ",
+       identGreeting: "You are watching METEOchannel in HD",
        identBlurb: "Hey guys whats up, its me, SSPWXR here and I will be doing a face reveal at 17PM wednesday 2023",
     }, 
 

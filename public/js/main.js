@@ -1,5 +1,5 @@
 const container =  document.getElementById('container');
-const scrollerInfo = document.querySelector(".slider-info");
+
 
 let h1TextSize = "3vw"
 let h2TextSize = "2.2vw"
